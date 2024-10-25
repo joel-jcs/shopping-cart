@@ -11,19 +11,22 @@ export default function Home() {
       <PromoBanner
         title="LIMITED TIME OFFER"
         subtitle="USE 'LETSGOO' AT CHECKOUT FOR 50% OFF"
-        imageSrc="https://c.stocksy.com/a/KY7I00/z9/4318940.jpg"
+        imageSrc="https://c.stocksy.com/a/Iu2P00/z9/5969378.jpg"
       />
-      <div className="categoriesContainer">
-        {categories.map((category) => {
-          return (
-            <CategoryCard
-              key={category.id}
-              imageSrc={category.image}
-              altText=""
-              categoryName={category.name}
-            />
-          );
-        })}
+      <div className="categoriesSection">
+        <h1 className="categoriesSectionTitle">SHOP BY CATEGORY</h1>
+        <div className="categoriesContainer">
+          {categories.map((category) => {
+            return (
+              <CategoryCard
+                key={category.id}
+                imageSrc={category.image}
+                altText=""
+                categoryName={category.name}
+              />
+            );
+          })}
+        </div>
       </div>
 
       <PromoBanner
