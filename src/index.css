@@ -73,29 +73,55 @@ button:focus-visible {
 
 .promoContainer {
   width: 100%;
-  height: 40vh;
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   cursor: pointer;
+  background-color: black;
+}
+
+.promoContainer::after {
+  content: "";
+  background-color: black;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.3;
+  z-index: 1;
 }
 
 .promoBanner {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 0 -60px;
+}
+
+.promoTitle {
+  position: absolute;
+  margin-top: 240px;
+  z-index: 2;
+}
+
+.promoSubtitle {
+  position: absolute;
+  margin-top: 320px;
+  z-index: 2;
 }
 
 .promoButton {
   position: absolute;
   bottom: 10%;
-  right: 10%;
+  z-index: 2;
 }
 
 .categoriesContainer {
   width: 100%;
-  height: 40vh;
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -108,7 +134,7 @@ button:focus-visible {
   align-items: center;
   position: relative;
   height: 100%;
-  padding: 0 10px;
+  width: 25%;
   cursor: pointer;
 }
 
