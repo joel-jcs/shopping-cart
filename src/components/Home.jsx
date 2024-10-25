@@ -1,33 +1,36 @@
 import PromoBanner from "./PromoBanner";
 import CategoryCard from "./CategoryCard";
+import data from "../assets/categoryData";
+import { useState } from "react";
 
 export default function Home() {
+  const [categories] = useState(data);
+
   return (
     <div className="homeContainer">
-      <h1>Home</h1>
-      <PromoBanner imageSrc="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" />
+      <PromoBanner
+        title="LIMITED TIME OFFER"
+        subtitle="USE 'LETSGOO' AT CHECKOUT FOR 50% OFF"
+        imageSrc="https://c.stocksy.com/a/KY7I00/z9/4318940.jpg"
+      />
       <div className="categoriesContainer">
-        <CategoryCard
-          imageSrc="https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-1080x675.jpg"
-          altText=""
-          categoryName="men"
-        />
-        <CategoryCard
-          imageSrc="https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-1080x675.jpg"
-          altText=""
-          categoryName="women"
-        />
-        <CategoryCard
-          imageSrc="https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-1080x675.jpg"
-          altText=""
-          categoryName="kids"
-        />
-        <CategoryCard
-          imageSrc="https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-1080x675.jpg"
-          altText=""
-          categoryName="accessories"
-        />
+        {categories.map((category) => {
+          return (
+            <CategoryCard
+              key={category.id}
+              imageSrc={category.image}
+              altText=""
+              categoryName={category.name}
+            />
+          );
+        })}
       </div>
+
+      <PromoBanner
+        title="SUMMER SALE"
+        subtitle="ALL SUMMER ITEMS ON CLEARANCE UNTIL 12/25"
+        imageSrc="https://c.stocksy.com/a/Mq0C00/z9/2863182.jpg"
+      />
     </div>
   );
 }
