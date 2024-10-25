@@ -1,14 +1,10 @@
+import PromoBanner from "./PromoBanner";
+
 export default function Home() {
   return (
     <div className="homeContainer">
       <h1>Home</h1>
-      <div className="promoContainer">
-        <img
-          src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
-          className="promoBanner"
-        />
-        <button className="promoButton">SHOP NOW</button>
-      </div>
+      <PromoBanner imageSrc="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" />
       <div className="categoriesContainer">
         <div className="categoryCardContainer">
           <img
