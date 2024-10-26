@@ -7,15 +7,15 @@ export default function Home() {
   const [categories] = useState(data);
 
   return (
-    <div className="homeContainer">
+    <div className="mt-8 flex flex-col items-center justify-center gap-10">
       <PromoBanner
         title="LIMITED TIME OFFER"
         subtitle="USE 'LETSGOO' AT CHECKOUT FOR 50% OFF"
         imageSrc="https://c.stocksy.com/a/Iu2P00/z9/5969378.jpg"
       />
-      <div className="categoriesSection">
-        <h1 className="categoriesSectionTitle">SHOP BY CATEGORY</h1>
-        <div className="categoriesContainer">
+      <div className="mb-8 mt-8 flex flex-col">
+        <h1 className="mb-6 text-4xl font-black">SHOP BY CATEGORY</h1>
+        <div className="flex h-[70vh] w-full items-center justify-center gap-10">
           {categories.map((category) => {
             return (
               <CategoryCard
@@ -31,7 +31,7 @@ export default function Home() {
 
       <PromoBanner
         title="SUMMER SALE"
-        subtitle="ALL SUMMER ITEMS ON CLEARANCE UNTIL 12/25"
+        subtitle="CHECK OUT OUR SUMMER COLLECTION"
         imageSrc="https://c.stocksy.com/a/Mq0C00/z9/2863182.jpg"
       />
     </div>
