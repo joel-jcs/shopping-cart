@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
 
-export default function Store({ categoryName }) {
+export default function Store({ categoryName = "all items" }) {
   const [productData, setProductData] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -9,6 +9,7 @@ export default function Store({ categoryName }) {
   const womenCloth = ["womens-dresses", "womens-shoes"];
   const menAcc = ["mens-watches"];
   const womenAcc = ["womens-jewellery", "womens-bags", "women-watches"];
+  const all = [...menCloth, ...womenCloth, ...menAcc, ...womenAcc];
 
   const url = "https://dummyjson.com/products?limit=0";
 
@@ -31,6 +32,9 @@ export default function Store({ categoryName }) {
       const womensAccessories = data.products.filter((item) =>
         womenAcc.includes(item.category),
       );
+      const allProducts = data.products.filter((item) =>
+        all.includes(item.category),
+      );
 
       let filteredData;
       if (categoryName.toLowerCase() === "men's clothing") {
@@ -41,6 +45,8 @@ export default function Store({ categoryName }) {
         filteredData = mensAccessories;
       } else if (categoryName.toLowerCase() === "women's accessories") {
         filteredData = womensAccessories;
+      } else {
+        filteredData = allProducts;
       }
 
       setProductData(filteredData);
