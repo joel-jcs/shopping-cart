@@ -7,13 +7,13 @@ export default function Home() {
   const [categories] = useState(data);
 
   return (
-    <div className="mt-8 flex flex-col items-center justify-center gap-10">
+    <div className="flex flex-col items-center justify-center gap-10">
       <PromoBanner
         title="LIMITED TIME OFFER"
         subtitle="USE 'LETSGOO' AT CHECKOUT FOR 50% OFF"
         imageSrc="https://c.stocksy.com/a/Iu2P00/z9/5969378.jpg"
       />
-      <div className="mb-8 mt-8 flex flex-col">
+      <div className="mb-10 mt-8 flex flex-col">
         <h1 className="mb-6 text-4xl font-black">SHOP BY CATEGORY</h1>
         <div className="flex h-[70vh] w-full items-center justify-center gap-10">
           {categories.map((category) => {
