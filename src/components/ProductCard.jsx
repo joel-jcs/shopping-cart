@@ -1,11 +1,8 @@
 export default function ProductCard({ product }) {
   return (
-    <div
-      className="productCard flex flex-col items-center justify-center gap-3 rounded-lg px-1 py-3"
-      key={product.id}
-    >
+    <div className="productCard flex flex-col items-center justify-center gap-3 rounded-lg px-1 py-3">
       <img
-        src={product.image}
+        src={product.thumbnail}
         className="productImg h-full select-none bg-white object-cover"
       />
       <div className="productDetails flex h-auto w-full flex-col items-center py-2">
@@ -13,7 +10,7 @@ export default function ProductCard({ product }) {
           {product.price}
         </h2>
         <span className="productName mb-4 text-sm font-bold">
-          {product.name}
+          {product.title}
         </span>
         <div className="productQtyContainer flex h-1/4 w-full items-center justify-center gap-2 py-0">
           <button>-</button>

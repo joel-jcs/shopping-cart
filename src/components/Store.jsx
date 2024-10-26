@@ -1,5 +1,4 @@
-import { useState } from "react";
-import data from "../assets/dummyProductData";
+import { useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
 
 export default function Store() {
@@ -14,17 +13,52 @@ export default function Store() {
         show productcard components for each in the products state var
       */
   }
-  const [products, setProducts] = useState(data);
 
-  console.log(products);
+  const [productData, setProductData] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const menCloth = ["Mens Shirts", "Mens Shoes"];
+  const womenCloth = ["womens-dresses", "womens-shoes"];
+  const menAcc = ["Mens Watches"];
+  const womenAcc = ["Womens Jewellery", "Womens Bags", "Womens Watches"];
+
+  const url = "https://dummyjson.com/products?limit=0";
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(url);
+      if (response.status >= 400) {
+        throw new Error("server error");
+      }
+      const data = await response.json();
+      console.log(data.products);
+      const womensClothing = data.products.filter((item) =>
+        womenCloth.includes(item.category),
+      );
+
+      console.log(womensClothing);
+
+      setProductData(womensClothing);
+    } catch (error) {
+      setError(error);
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <div className="storeContainer my-20 flex flex-col items-center justify-center gap-10">
       <h1 className="text-6xl font-black">CATEGORY NAME</h1>
-      <div className="productContainer my-10 flex flex-wrap gap-5 px-10 py-20">
-        {products.map((product) => {
-          return <ProductCard key={product.id} product={product} />;
-        })}
+      <div className="productContainer my-10 grid grid-cols-4 gap-5 px-10">
+        {productData &&
+          productData.map((product) => {
+            return <ProductCard key={product.id} product={product} />;
+          })}
       </div>
     </div>
   );
