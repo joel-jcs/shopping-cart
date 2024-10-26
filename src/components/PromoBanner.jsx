@@ -7,7 +7,7 @@ export default function PromoBanner({ title, subtitle, imageSrc }) {
       <h2 className="absolute z-10 mt-[380px] text-3xl font-black text-white">
         {subtitle}
       </h2>
-      <img src={imageSrc} className="h-full w-full object-cover" />
+      <img src={imageSrc} className="h-full w-full object-cover object-top" />
       <button className="absolute bottom-10 z-10 text-lg">SHOP NOW</button>
     </div>
   );

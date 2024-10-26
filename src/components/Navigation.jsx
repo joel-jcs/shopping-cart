@@ -13,10 +13,12 @@ export default function Navigation() {
   );
 
   return (
-    <div className="fixed left-0 top-0 z-10 flex h-12 w-full items-center justify-evenly bg-[#181a1b] px-4 shadow-md">
-      <h2 className="text-2xl">dress.me</h2>
+    <div className="fixed left-0 top-0 z-50 flex h-12 w-full items-center justify-evenly bg-[#181a1b] shadow-md">
+      <a className="cursor-pointer text-2xl">dress.me</a>
       <Dropdown />
-      <button className="border-none p-0.5 px-3">{cartIcon}</button>
+      <button className="delay-50 border-none p-0.5 px-3 transition ease-linear hover:opacity-80">
+        {cartIcon}
+      </button>
     </div>
   );
 }

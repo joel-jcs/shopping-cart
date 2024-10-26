@@ -13,11 +13,11 @@ const Dropdown = () => {
 
   return (
     <div
-      className="relative text-left"
+      className="item-center relative"
       onMouseEnter={handleToggle}
       onMouseLeave={handleToggle}
     >
-      <button className="inline-flex w-full justify-center gap-x-1.5 rounded-md border-none bg-[#181a1b] px-3 py-2 text-sm font-semibold text-white shadow-sm outline-none ring-0 hover:bg-[#181a1b] focus:ring-0">
+      <button className="mr-10 flex items-center justify-center gap-x-1.5 rounded-md border-none bg-[#181a1b] py-2 text-xl font-semibold text-white shadow-sm outline-none ring-0 transition hover:bg-[#181a1b] hover:opacity-80 focus:ring-0">
         Store
         <svg
           className="-mr-1 h-5 w-5 text-white"
@@ -35,13 +35,13 @@ const Dropdown = () => {
         </svg>
       </button>
       {isOpen && (
-        <div className="fixed z-10 w-56 origin-top-right rounded-md bg-[#181a1b] shadow-lg ring-1 ring-black ring-opacity-5 transition">
-          <div className="py-1">
+        <div className="absolute -left-[50px] z-10 w-56 origin-top rounded-md bg-[#181a1b] shadow-lg ring-0 transition duration-100 ease-linear">
+          <div className="mx-auto py-1">
             <ul>
               <li>
                 <a
                   href="#"
-                  className="block px-4 py-2 text-sm text-white"
+                  className="block px-4 py-2 text-base text-white"
                   onClick={() => handleItemClick("Men's Clothing")}
                 >
                   Men's Clothing
@@ -50,7 +50,7 @@ const Dropdown = () => {
               <li>
                 <a
                   href="#"
-                  className="block px-4 py-2 text-sm text-white"
+                  className="block px-4 py-2 text-base text-white"
                   onClick={() => handleItemClick("Men's Accessories")}
                 >
                   Men's Accessories
@@ -59,7 +59,7 @@ const Dropdown = () => {
               <li>
                 <a
                   href="#"
-                  className="block px-4 py-2 text-sm text-white"
+                  className="block px-4 py-2 text-base text-white"
                   onClick={() => handleItemClick("Women's Clothing")}
                 >
                   Women's Clothing
@@ -68,7 +68,7 @@ const Dropdown = () => {
               <li>
                 <a
                   href="#"
-                  className="block px-4 py-2 text-sm text-white"
+                  className="block px-4 py-2 text-base text-white"
                   onClick={() => handleItemClick("Women's Accessories")}
                 >
                   Women's Accessories
