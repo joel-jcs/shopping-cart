@@ -8,7 +8,7 @@ export default function PromoBanner({ title, subtitle, imageSrc }) {
         {subtitle}
       </h2>
       <img src={imageSrc} className="h-full w-full object-cover object-top" />
-      <button className="absolute bottom-10 z-10 text-lg">SHOP NOW</button>
+      <button className="absolute bottom-[15%] z-10 text-lg">SHOP NOW</button>
     </div>
   );
 }

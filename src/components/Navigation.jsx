@@ -13,7 +13,7 @@ export default function Navigation() {
   );
 
   return (
-    <div className="fixed left-0 top-0 z-50 flex h-12 w-full items-center justify-evenly bg-[#181a1b] shadow-md">
+    <div className="fixed left-0 top-0 z-50 flex h-12 w-full items-center justify-evenly bg-[#181a1b] text-white shadow-md">
       <a className="cursor-pointer text-2xl">dress.me</a>
       <Dropdown />
       <button className="delay-50 border-none p-0.5 px-3 transition ease-linear hover:opacity-80">

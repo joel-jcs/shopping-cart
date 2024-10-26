@@ -8,8 +8,8 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: rgba(10, 10, 10, 0.87);
+  background-color: #ffffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -55,9 +55,40 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  border: 1.5px solid #414141;
   cursor: pointer;
   transition: border-color 0.25s;
+}
+
+.homeContainer button {
+  color: white;
+  background-color: #da5604;
+  border: none;
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.categoryContainer button {
+  font-size: 1.5rem;
+}
+
+.productQtyContainer button {
+  padding: 1rem;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="number"] {
+  border: 1.5px solid #414141;
+  border-radius: 5px;
+  padding: 0.3rem;
+  margin: 0.5rem 0;
+  background-color: white;
+  outline: none;
 }
 
 .footer {
@@ -82,5 +113,13 @@ button {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
 }
