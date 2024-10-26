@@ -7,7 +7,7 @@ export default function ProductCard({ product }) {
       />
       <div className="productDetails flex h-auto w-full flex-col items-center py-2">
         <h2 className="productPrice text-xl font-bold text-red-500">
-          {product.price}
+          {`$${product.price.toLocaleString()}`}
         </h2>
         <span className="productName mb-4 text-sm font-bold">
           {product.title}

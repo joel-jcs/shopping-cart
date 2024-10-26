@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <Store />
+      <Store categoryName={"Men's Clothing"} />
       <Footer />
     </>
   );
