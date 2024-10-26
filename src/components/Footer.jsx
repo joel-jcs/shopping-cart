@@ -26,8 +26,10 @@ export default function Footer() {
       </div>
 
       <div className="col-4 subscribe flex w-[25%] flex-col">
-        <h2 className="text-xl font-black">Subscribe to our newsletter</h2>
-        <form className="flex h-20 items-center justify-center gap-3">
+        <h2 className="text-left text-xl font-black">
+          Subscribe to our newsletter
+        </h2>
+        <form className="flex h-20 items-center justify-start gap-3">
           <input
             className="w-[60%] rounded-md border-none bg-white p-2 text-black"
             type="email"

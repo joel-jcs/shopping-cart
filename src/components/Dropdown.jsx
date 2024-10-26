@@ -18,7 +18,7 @@ const Dropdown = () => {
       onMouseLeave={handleToggle}
     >
       <button className="mr-10 flex items-center justify-center gap-x-1.5 rounded-md border-none bg-[#181a1b] py-2 text-xl font-semibold text-white shadow-sm outline-none ring-0 transition hover:bg-[#181a1b] hover:opacity-80 focus:ring-0">
-        Store
+        Shop
         <svg
           className="-mr-1 h-5 w-5 text-white"
           fill="none"
