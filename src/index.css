@@ -31,6 +31,7 @@ a {
 
 a:hover {
   opacity: 0.8;
+  cursor: pointer;
 }
 
 body {
@@ -39,6 +40,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -56,6 +58,18 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  grid-template-columns: 1.3fr 1fr 1fr 1.4fr;
+  padding: 40px 10px;
+  background-color: black;
+  position: absolute;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 @media (prefers-color-scheme: light) {
