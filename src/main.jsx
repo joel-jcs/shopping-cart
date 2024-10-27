@@ -18,10 +18,12 @@ const router = createBrowserRouter([
       {
         path: "shop",
         element: <Store />,
-      },
-      {
-        path: "shop/:category",
-        element: <Store />,
+        children: [
+          {
+            path: ":category",
+            element: <Store />,
+          },
+        ],
       },
     ],
   },
