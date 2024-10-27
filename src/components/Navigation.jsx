@@ -1,5 +1,5 @@
 import Dropdown from "./Dropdown";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Navigation() {
   const cartIcon = (
@@ -13,6 +13,12 @@ export default function Navigation() {
     </svg>
   );
 
+  const navigate = useNavigate();
+
+  const handleCartClick = () => {
+    navigate("cart");
+  };
+
   return (
     <div className="fixed left-0 top-0 z-50 flex h-12 w-full items-center justify-evenly bg-[#181a1b] text-white shadow-md">
       <Link
@@ -22,7 +28,10 @@ export default function Navigation() {
         dress.me
       </Link>
       <Dropdown />
-      <button className="delay-50 border-none p-0.5 px-3 transition ease-linear hover:opacity-80">
+      <button
+        onClick={handleCartClick}
+        className="delay-50 border-none p-0.5 px-3 transition ease-linear hover:opacity-80"
+      >
         {cartIcon}
       </button>
     </div>
