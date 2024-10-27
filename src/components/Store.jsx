@@ -1,10 +1,14 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import ProductCard from "./ProductCard";
 
-export default function Store({ categoryName = "all items" }) {
+export default function Store() {
   const [productData, setProductData] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [categoryName, setCategoryName] = useState("all items");
+  const { category } = useParams();
+
   const menCloth = ["mens-shirts", "mens-shoes"];
   const womenCloth = ["womens-dresses", "womens-shoes"];
   const menAcc = ["mens-watches"];
@@ -37,14 +41,19 @@ export default function Store({ categoryName = "all items" }) {
       );
 
       let filteredData;
-      if (categoryName.toLowerCase() === "men's clothing") {
+
+      if (category === "mens-clothing") {
         filteredData = mensClothing;
-      } else if (categoryName.toLowerCase() === "women's clothing") {
+        setCategoryName("men's clothing");
+      } else if (category === "womens-clothing") {
         filteredData = womensClothing;
-      } else if (categoryName.toLowerCase() === "men's accessories") {
+        setCategoryName("women's clothing");
+      } else if (category === "mens-accessories") {
         filteredData = mensAccessories;
-      } else if (categoryName.toLowerCase() === "women's accessories") {
+        setCategoryName("men's accessories");
+      } else if (category === "womens-accessories") {
         filteredData = womensAccessories;
+        setCategoryName("women's accessories");
       } else {
         filteredData = allProducts;
       }
@@ -60,7 +69,7 @@ export default function Store({ categoryName = "all items" }) {
 
   useEffect(() => {
     fetchData();
-  }, [categoryName]);
+  }, [category]);
 
   if (loading) {
     return <div>Loading...</div>;
