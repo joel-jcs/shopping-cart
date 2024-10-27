@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Dropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,40 +40,44 @@ const Dropdown = () => {
           <div className="mx-auto py-1">
             <ul>
               <li>
-                <a
-                  href="#"
+                <Link
+                  to="shop"
                   className="block px-4 py-2 text-base text-white"
-                  onClick={() => handleItemClick("Men's Clothing")}
+                >
+                  All Items
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="shop/mens-clothing"
+                  className="block px-4 py-2 text-base text-white"
                 >
                   Men's Clothing
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  to="shop/mens-accessories"
                   className="block px-4 py-2 text-base text-white"
-                  onClick={() => handleItemClick("Men's Accessories")}
                 >
                   Men's Accessories
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  to="shop/womens-clothing"
                   className="block px-4 py-2 text-base text-white"
-                  onClick={() => handleItemClick("Women's Clothing")}
                 >
                   Women's Clothing
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  to="shop/womens-accessories"
                   className="block px-4 py-2 text-base text-white"
-                  onClick={() => handleItemClick("Women's Accessories")}
                 >
                   Women's Accessories
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

@@ -56,6 +56,7 @@ export default function Store() {
         setCategoryName("women's accessories");
       } else {
         filteredData = allProducts;
+        setCategoryName("all items");
       }
 
       setProductData(filteredData);
