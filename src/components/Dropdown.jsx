@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Dropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,44 +40,44 @@ const Dropdown = () => {
           <div className="mx-auto py-1">
             <ul>
               <li>
-                <Link
-                  to="shop"
+                <NavLink
+                  to="shop/all-items"
                   className="block px-4 py-2 text-base text-white"
                 >
                   All Items
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
                   to="shop/mens-clothing"
                   className="block px-4 py-2 text-base text-white"
                 >
                   Men's Clothing
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
                   to="shop/mens-accessories"
                   className="block px-4 py-2 text-base text-white"
                 >
                   Men's Accessories
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
                   to="shop/womens-clothing"
                   className="block px-4 py-2 text-base text-white"
                 >
                   Women's Clothing
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
                   to="shop/womens-accessories"
                   className="block px-4 py-2 text-base text-white"
                 >
                   Women's Accessories
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>

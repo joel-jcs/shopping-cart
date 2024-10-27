@@ -123,3 +123,9 @@ input[type="number"] {
     margin: 0;
   }
 }
+
+.active {
+  font-size: 1.1rem;
+  color: white;
+  font-weight: bold;
+}
