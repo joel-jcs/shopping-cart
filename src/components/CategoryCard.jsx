@@ -9,7 +9,6 @@ export default function CategoryCard({ imageSrc, altText, categoryName }) {
       .replace(/'/g, "")
       .replace(/\s/g, "-");
 
-    console.log(categoryPath);
     navigate(`/shop/${categoryPath}`);
   };
 
