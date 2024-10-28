@@ -88,7 +88,13 @@ export default function Cart() {
                 })}
               </span>
             </div>
-            <button className="bg-black uppercase text-white transition-all duration-150 hover:bg-white hover:text-black">
+            <button
+              onClick={() => {
+                alert("Checkout successful");
+                setCart([]);
+              }}
+              className="bg-black uppercase text-white transition-all duration-150 hover:bg-white hover:text-black"
+            >
               Checkout
             </button>
           </div>
