@@ -87,9 +87,9 @@ export default function CartItem({ item, setCart }) {
   };
 
   return (
-    <div className="cartItem flex w-full gap-2 rounded-lg bg-white py-2 shadow-md">
+    <div className="cartItem flex w-full gap-2 rounded-lg bg-white px-4 py-2 shadow-md">
       <img src={item.image} alt="" className="cartItemImg w-1/4" />
-      <div className="cartItemDetails flex w-3/4 items-start justify-start px-2">
+      <div className="cartItemDetails flex w-3/4 items-start justify-start">
         <div className="col1 flex h-full w-full flex-col items-start justify-center">
           <h2 className="text-xl font-bold uppercase">{item.name}</h2>
           <span className="cartItemCode text-xs text-gray-400">
