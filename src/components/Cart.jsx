@@ -87,7 +87,9 @@ export default function Cart() {
               <span>Total:</span>
               <span className="text-red-500">130.00</span>
             </div>
-            <button className="bg-black uppercase text-white">Checkout</button>
+            <button className="bg-black uppercase text-white transition-all duration-150 hover:bg-white hover:text-black">
+              Checkout
+            </button>
           </div>
         </div>
       </div>
