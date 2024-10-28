@@ -1,11 +1,15 @@
-export default function ProductCard({ product, cart, setCart, qty, setQty }) {
+export default function ProductCard({ product, cart, setCart }) {
   const handleAddToCart = () => {
     const hasItem = cart.some((item) => product.id === item.id);
     if (hasItem) {
       setCart((prevItems) => {
         return prevItems.map((item) => {
           if (item.id === product.id) {
-            return { ...item, qty: item.qty + 1 };
+            return {
+              ...item,
+              qty: item.qty + 1,
+              total: item.price * (item.qty + 1),
+            };
           }
           return item;
         });
@@ -19,6 +23,8 @@ export default function ProductCard({ product, cart, setCart, qty, setQty }) {
           price: product.price,
           qty: 1,
           image: product.thumbnail,
+          sku: product.sku,
+          total: product.price,
         },
       ]);
     }
