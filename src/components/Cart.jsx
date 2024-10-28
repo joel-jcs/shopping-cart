@@ -15,6 +15,15 @@ export default function Cart() {
     );
   }
 
+  const orderSubtotal = cart
+    .map((item) => item.total)
+    .reduce((a, b) => a + b, 0);
+  const orderSummary = {
+    subtotal: orderSubtotal,
+    shipping: orderSubtotal > 50 ? 0 : 10,
+    tax: orderSubtotal * 0.115,
+  };
+
   return (
     <>
       <div className="cartContainer my-20 flex min-h-[80vh] flex-col items-center justify-start gap-10">
@@ -32,19 +41,52 @@ export default function Cart() {
             <h2 className="text-2xl font-bold">Order Summary</h2>
             <div className="subtotalContainer flex justify-between border-b-2 py-2 text-sm font-semibold">
               <span>Item Subtotal ({cartQty}):</span>
-              <span>110.00</span>
+              <span>
+                $
+                {orderSummary.subtotal.toLocaleString(undefined, {
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                })}
+              </span>
             </div>
             <div className="shippingContainer flex justify-between py-2 text-sm font-semibold">
-              <span>Shipping:</span>
-              <span>10.00</span>
+              <span>
+                Shipping:
+                <i className="text-xs text-gray-500"> (free on orders $50+)</i>
+              </span>
+              <span>
+                $
+                {orderSummary.shipping.toLocaleString(undefined, {
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                })}
+              </span>
             </div>
             <div className="taxContainer flex justify-between border-b-2 py-2 text-sm font-semibold">
-              <span>Tax:</span>
-              <span>10.00</span>
+              <span>
+                Tax: <i className="text-xs text-gray-500"> (11.5%)</i>
+              </span>
+              <span>
+                $
+                {orderSummary.tax.toLocaleString(undefined, {
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                })}
+              </span>
             </div>
             <div className="totalContainer flex justify-between py-2 text-lg font-bold">
               <span>Total:</span>
-              <span className="text-red-500">130.00</span>
+              <span className="text-red-500">
+                $
+                {(
+                  orderSummary.subtotal +
+                  orderSummary.shipping +
+                  orderSummary.tax
+                ).toLocaleString(undefined, {
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                })}
+              </span>
             </div>
             <button className="bg-black uppercase text-white transition-all duration-150 hover:bg-white hover:text-black">
               Checkout
