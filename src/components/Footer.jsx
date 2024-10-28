@@ -1,8 +1,14 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div className="footer text-white">
       <div className="col1 flex w-[20%] flex-col gap-4 px-6">
-        <span className="text-3xl">dress.me</span>
+        <span className="text-3xl font-black">dress.me</span>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
           consectetur, dolores quidem, earum, quia, voluptate temporibus
@@ -12,17 +18,51 @@ export default function Footer() {
 
       <div className="col2 flex w-[10%] flex-col gap-3 px-6">
         <h2 className="text-xl font-black">Discover</h2>
-        <a>New Arrivals</a>
-        <a>Best Sellers</a>
-        <a>About Us</a>
-        <a>Careers</a>
+        <Link to="shop" onClick={scrollToTop}>
+          New Arrivals
+        </Link>
+        <Link to="shop" onClick={scrollToTop}>
+          Best Sellers
+        </Link>
+        <a
+          onClick={() =>
+            alert("This link would normally send you to another page")
+          }
+        >
+          About Us
+        </a>
+        <a
+          onClick={() =>
+            alert("This link would normally send you to another page")
+          }
+        >
+          Careers
+        </a>
       </div>
 
       <div className="col3 flex w-[10%] flex-col gap-3 px-6">
         <h2 className="text-xl font-black">Support</h2>
-        <a>Order Status</a>
-        <a>FAQs</a>
-        <a>Contact Us</a>
+        <a
+          onClick={() =>
+            alert("This link would normally send you to another page")
+          }
+        >
+          Order Status
+        </a>
+        <a
+          onClick={() =>
+            alert("This link would normally send you to another page")
+          }
+        >
+          FAQs
+        </a>
+        <a
+          onClick={() =>
+            alert("This link would normally send you to another page")
+          }
+        >
+          Contact Us
+        </a>
       </div>
 
       <div className="col-4 subscribe flex w-[25%] flex-col">
@@ -35,7 +75,14 @@ export default function Footer() {
             type="email"
             placeholder="Enter your email"
           />
-          <button>Subscribe</button>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              alert("Thank you for subscribing!");
+            }}
+          >
+            Subscribe
+          </button>
         </form>
       </div>
     </div>
