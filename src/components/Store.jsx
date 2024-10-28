@@ -75,9 +75,23 @@ export default function Store() {
   }, [category]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <>
+        <div className="storeContainer my-20 flex min-h-[80vh] flex-col items-center justify-start gap-40">
+          <h1 className="text-6xl font-black uppercase">Store</h1>
+          <h2 className="text-3xl font-bold">Loading...</h2>
+        </div>
+      </>
+    );
   } else if (error) {
-    return <div>Error: {error.message}</div>;
+    return (
+      <>
+        <div className="storeContainer my-20 flex min-h-[80vh] flex-col items-center justify-start gap-40">
+          <h1 className="text-6xl font-black uppercase">Store</h1>
+          <h2 className="text-3xl font-bold">Error: {error.message}</h2>
+        </div>
+      </>
+    );
   }
 
   return (
