@@ -87,9 +87,9 @@ export default function CartItem({ item, setCart }) {
   };
 
   return (
-    <div className="cartItem flex w-full rounded-lg bg-white py-2 shadow-md">
+    <div className="cartItem flex w-full gap-2 rounded-lg bg-white py-2 shadow-md">
       <img src={item.image} alt="" className="cartItemImg w-1/4" />
-      <div className="cartItemDetails flex w-3/4 items-start px-2">
+      <div className="cartItemDetails flex w-3/4 items-start justify-start px-2">
         <div className="col1 flex h-full w-full flex-col items-start justify-center">
           <h2 className="text-xl font-bold uppercase">{item.name}</h2>
           <span className="cartItemCode text-xs text-gray-400">
@@ -115,11 +115,11 @@ export default function CartItem({ item, setCart }) {
             </button>
           </div>
         </div>
-        <div className="col2 flex h-full flex-col items-end gap-20 py-2 pr-3">
+        <div className="col2 flex h-full flex-col items-end justify-start gap-20 py-2">
           <button onClick={handleRemoveItem} className="-200 border-0 p-0">
             {removeItemIcon}
           </button>
-          <span className="cartItemPrice text-xl font-bold text-red-500">
+          <span className="cartItemPrice w-40 p-0 text-right text-xl font-bold text-red-500">
             $
             {item.total.toLocaleString(
               (undefined,
