@@ -1,4 +1,29 @@
-export default function ProductCard({ product }) {
+export default function ProductCard({ product, cart, setCart, qty, setQty }) {
+  const handleAddToCart = () => {
+    const hasItem = cart.some((item) => product.id === item.id);
+    if (hasItem) {
+      setCart((prevItems) => {
+        return prevItems.map((item) => {
+          if (item.id === product.id) {
+            return { ...item, qty: item.qty + 1 };
+          }
+          return item;
+        });
+      });
+    } else {
+      setCart((prevItems) => [
+        ...prevItems,
+        {
+          name: product.title,
+          id: product.id,
+          price: product.price,
+          qty: 1,
+          image: product.thumbnail,
+        },
+      ]);
+    }
+  };
+
   return (
     <div className="productCard flex flex-col items-center justify-center gap-3 rounded-lg px-1 py-3 transition-all duration-150 hover:scale-105 hover:shadow-xl">
       <img
@@ -12,7 +37,10 @@ export default function ProductCard({ product }) {
         <span className="productName mb-4 text-sm font-bold">
           {product.title}
         </span>
-        <button className="w-3/4 transition-all duration-150 hover:bg-black hover:text-white">
+        <button
+          onClick={handleAddToCart}
+          className="w-3/4 transition-all duration-150 hover:bg-black hover:text-white"
+        >
           Add to Cart
         </button>
       </div>
