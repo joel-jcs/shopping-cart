@@ -60,6 +60,11 @@ button {
   transition: border-color 0.25s;
 }
 
+.storeContainer button:hover {
+  /* background-color: black; */
+  /* color: white; */
+}
+
 .homeContainer button {
   color: white;
   background-color: #da5604;

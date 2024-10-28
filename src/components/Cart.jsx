@@ -29,7 +29,7 @@ export default function Cart() {
         <h1 className="text-6xl font-black uppercase">Shopping Cart (1)</h1>
         <div className="flex items-start justify-start gap-4 bg-gray-100 px-4 py-3">
           <div className="cartItemContainer flex w-[70%] flex-col items-start justify-start">
-            <div className="cartItem flex w-full rounded-lg bg-white px-4 py-2 shadow-md">
+            <div className="cartItem flex w-full rounded-lg bg-white py-2 shadow-md">
               <img
                 src="https://cdn.dummyjson.com/products/images/mens-shirts/Gigabyte%20Aorus%20Men%20Tshirt/thumbnail.png"
                 alt=""
