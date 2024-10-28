@@ -1,7 +1,8 @@
 import Dropdown from "./Dropdown";
 import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
-export default function Navigation() {
+export default function Navigation({ cart }) {
   const cartIcon = (
     <svg
       className="w-7 fill-white"
@@ -19,20 +20,24 @@ export default function Navigation() {
     navigate("cart");
   };
 
+  const [qtyArray, setQtyArray] = useState([]);
+  useEffect(() => {
+    setQtyArray(cart.map((item) => item.qty));
+  }, [cart]);
   return (
     <div className="fixed left-0 top-0 z-50 flex h-12 w-full items-center justify-evenly bg-[#181a1b] text-white shadow-md">
       <Link
         to=""
-        className="cursor-pointer text-2xl transition-all duration-100 ease-linear"
+        className="cursor-pointer text-2xl font-black transition-all duration-100 ease-linear"
       >
         dress.me
       </Link>
       <Dropdown />
       <button
         onClick={handleCartClick}
-        className="delay-50 border-none p-0.5 px-3 transition ease-linear hover:opacity-80"
+        className="delay-50 flex items-center border-none p-0.5 px-3 transition ease-linear hover:opacity-80"
       >
-        {cartIcon}
+        {cartIcon}( {qtyArray.reduce((a, b) => a + b, 0)} )
       </button>
     </div>
   );

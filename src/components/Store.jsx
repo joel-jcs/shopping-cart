@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useOutletContext } from "react-router-dom";
 import ProductCard from "./ProductCard";
 
 export default function Store() {
+  const { cart, setCart } = useOutletContext();
+
   const [productData, setProductData] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -83,7 +85,14 @@ export default function Store() {
       <h1 className="text-6xl font-black">{categoryName.toUpperCase()}</h1>
       <div className="productContainer my-10 grid grid-cols-4 gap-5 px-10">
         {productData.map((product) => {
-          return <ProductCard key={product.id} product={product} />;
+          return (
+            <ProductCard
+              key={product.id}
+              product={product}
+              cart={cart}
+              setCart={setCart}
+            />
+          );
         })}
       </div>
     </div>
