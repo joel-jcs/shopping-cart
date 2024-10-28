@@ -8,8 +8,11 @@ const Dropdown = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleItemClick = (item) => {
-    console.log(`Clicked on ${item}`);
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -42,6 +45,7 @@ const Dropdown = () => {
               <li>
                 <NavLink
                   to="shop/all-items"
+                  onClick={scrollToTop}
                   className="block px-4 py-2 text-base text-white"
                 >
                   All Items
@@ -50,6 +54,7 @@ const Dropdown = () => {
               <li>
                 <NavLink
                   to="shop/mens-clothing"
+                  onClick={scrollToTop}
                   className="block px-4 py-2 text-base text-white"
                 >
                   Men's Clothing
@@ -58,6 +63,7 @@ const Dropdown = () => {
               <li>
                 <NavLink
                   to="shop/mens-accessories"
+                  onClick={scrollToTop}
                   className="block px-4 py-2 text-base text-white"
                 >
                   Men's Accessories
@@ -66,6 +72,7 @@ const Dropdown = () => {
               <li>
                 <NavLink
                   to="shop/womens-clothing"
+                  onClick={scrollToTop}
                   className="block px-4 py-2 text-base text-white"
                 >
                   Women's Clothing
@@ -74,6 +81,7 @@ const Dropdown = () => {
               <li>
                 <NavLink
                   to="shop/womens-accessories"
+                  onClick={scrollToTop}
                   className="block px-4 py-2 text-base text-white"
                 >
                   Women's Accessories

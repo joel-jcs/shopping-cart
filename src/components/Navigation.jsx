@@ -17,12 +17,14 @@ export default function Navigation({ cartQty }) {
 
   const handleCartClick = () => {
     navigate("cart");
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
     <div className="fixed left-0 top-0 z-50 flex h-12 w-full items-center justify-evenly bg-[#181a1b] text-white shadow-md">
       <Link
         to=""
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         className="cursor-pointer text-2xl font-black transition-all duration-100 ease-linear"
       >
         dress.me

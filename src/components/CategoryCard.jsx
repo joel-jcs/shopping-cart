@@ -10,6 +10,7 @@ export default function CategoryCard({ imageSrc, altText, categoryName }) {
       .replace(/\s/g, "-");
 
     navigate(`/shop/${categoryPath}`);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (

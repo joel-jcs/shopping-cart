@@ -5,6 +5,7 @@ export default function PromoBanner({ title, subtitle, imageSrc }) {
 
   const handleBtnClick = () => {
     navigate("/shop");
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
     <div
