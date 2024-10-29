@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 
 export default function CategoryCard({ imageSrc, altText, categoryName }) {
@@ -20,7 +21,7 @@ export default function CategoryCard({ imageSrc, altText, categoryName }) {
     >
       <img
         src={imageSrc}
-        alt=""
+        alt={altText}
         className="h-full w-full rounded-2xl object-cover"
       />
       <button className="absolute bottom-[10%] uppercase">
@@ -29,3 +30,9 @@ export default function CategoryCard({ imageSrc, altText, categoryName }) {
     </div>
   );
 }
+
+CategoryCard.propTypes = {
+  imageSrc: PropTypes.string.isRequired,
+  altText: PropTypes.string.isRequired,
+  categoryName: PropTypes.string.isRequired,
+};

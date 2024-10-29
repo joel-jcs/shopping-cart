@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
 export default function PromoBanner({ title, subtitle, imageSrc }) {
   const navigate = useNavigate();
@@ -23,3 +24,9 @@ export default function PromoBanner({ title, subtitle, imageSrc }) {
     </div>
   );
 }
+
+PromoBanner.propTypes = {
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  imageSrc: PropTypes.string.isRequired,
+};

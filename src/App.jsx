@@ -3,7 +3,6 @@ import Navbar from "./components/Navigation";
 import Footer from "./components/Footer";
 import { Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
-import PropTypes from "prop-types";
 
 function App() {
   const [cart, setCart] = useState([]);

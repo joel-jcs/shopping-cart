@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export default function ProductCard({ product, cart, setCart }) {
   const handleAddToCart = () => {
     const hasItem = cart.some((item) => product.id === item.id);
@@ -53,3 +55,9 @@ export default function ProductCard({ product, cart, setCart }) {
     </div>
   );
 }
+
+ProductCard.propTypes = {
+  product: PropTypes.object.isRequired,
+  cart: PropTypes.array.isRequired,
+  setCart: PropTypes.func,
+};

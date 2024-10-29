@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
 export default function CartItem({ item, setCart }) {
   const removeItemIcon = (
@@ -131,3 +132,8 @@ export default function CartItem({ item, setCart }) {
     </div>
   );
 }
+
+CartItem.propTypes = {
+  item: PropTypes.object.isRequired,
+  setCart: PropTypes.func,
+};

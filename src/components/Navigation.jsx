@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import Dropdown from "./Dropdown";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -39,3 +40,7 @@ export default function Navigation({ cartQty }) {
     </div>
   );
 }
+
+Navigation.propTypes = {
+  cartQty: PropTypes.number,
+};
