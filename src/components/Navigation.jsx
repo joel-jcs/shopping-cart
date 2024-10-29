@@ -22,7 +22,10 @@ export default function Navigation({ cartQty }) {
   };
 
   return (
-    <div className="fixed left-0 top-0 z-50 flex h-12 w-full items-center justify-evenly bg-[#181a1b] text-white shadow-md">
+    <div
+      data-testid="navbar"
+      className="fixed left-0 top-0 z-50 flex h-12 w-full items-center justify-evenly bg-[#181a1b] text-white shadow-md"
+    >
       <Link
         to=""
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}

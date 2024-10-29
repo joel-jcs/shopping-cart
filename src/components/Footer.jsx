@@ -6,7 +6,7 @@ export default function Footer() {
   };
 
   return (
-    <div className="footer text-white">
+    <div data-testid="footer" className="footer text-white">
       <div className="col1 flex w-[20%] flex-col gap-4 px-6">
         <span className="text-3xl font-black">dress.me</span>
         <p>
