@@ -2,7 +2,12 @@ import "./App.css";
 import Navbar from "./components/Navigation";
 import Footer from "./components/Footer";
 import { Outlet } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, createContext } from "react";
+
+export const CartContext = createContext({
+  cart: [],
+  cartQty: [],
+});
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -14,8 +19,10 @@ function App() {
 
   return (
     <>
-      <Navbar cartQty={cartQty} />
-      <Outlet context={{ cart, setCart, cartQty }} />
+      <CartContext.Provider value={{ cart, setCart, cartQty }}>
+        <Navbar />
+        <Outlet />
+      </CartContext.Provider>
       <Footer />
     </>
   );

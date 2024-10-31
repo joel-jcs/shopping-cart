@@ -1,7 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import PropTypes from "prop-types";
+import { CartContext } from "../App";
 
-export default function CartItem({ item, setCart }) {
+export default function CartItem({ item }) {
+  const { setCart } = useContext(CartContext);
+
   const removeItemIcon = (
     <svg
       className="w-6 rounded-lg fill-gray-600"

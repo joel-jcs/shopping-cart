@@ -1,8 +1,10 @@
-import { useOutletContext } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../App";
+
 import CartItem from "./CartItem";
 
 export default function Cart() {
-  const { cart, setCart, cartQty } = useOutletContext();
+  const { cart, setCart, cartQty } = useContext(CartContext);
 
   if (cart.length === 0) {
     return (

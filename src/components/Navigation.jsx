@@ -1,8 +1,12 @@
 import PropTypes from "prop-types";
 import Dropdown from "./Dropdown";
 import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../App";
 
-export default function Navigation({ cartQty }) {
+export default function Navigation() {
+  const { cartQty } = useContext(CartContext);
+
   const cartIcon = (
     <svg
       className="w-7 fill-white"

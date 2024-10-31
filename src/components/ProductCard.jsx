@@ -1,6 +1,10 @@
 import PropTypes from "prop-types";
+import { useContext } from "react";
+import { CartContext } from "../App";
 
-export default function ProductCard({ product, cart, setCart }) {
+export default function ProductCard({ product }) {
+  const { cart, setCart } = useContext(CartContext);
+
   const handleAddToCart = () => {
     const hasItem = cart.some((item) => product.id === item.id);
     if (hasItem) {

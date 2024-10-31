@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
-import { useParams, useOutletContext } from "react-router-dom";
+import { useState, useEffect, useContext } from "react";
+import { useParams } from "react-router-dom";
 import ProductCard from "./ProductCard";
+import { CartContext } from "../App";
 
 export default function Store() {
-  const { cart, setCart } = useOutletContext();
+  const { cart, setCart } = useContext(CartContext);
 
   const [productData, setProductData] = useState([]);
   const [error, setError] = useState(null);
